@@ -1,0 +1,26 @@
+{
+  "name": "xpresscart-backend",
+  "version": "1.0.0",
+  "description": "XpressCart food delivery backend",
+  "main": "api/index.js",
+  "scripts": {
+    "dev": "node api/index.js",
+    "start": "node api/index.js",
+    "seed": "node seed.js"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.9.0",
+    "@graphql-tools/schema": "^10.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "graphql": "^16.8.0",
+    "graphql-subscriptions": "^3.0.0",
+    "graphql-ws": "^6.0.8",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.0",
+    "uuid": "^9.0.0",
+    "ws": "^8.14.0"
+  }
+}

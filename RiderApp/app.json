@@ -1,0 +1,79 @@
+{
+  "expo": {
+    "name": "XpressCart Rider",
+    "description": "XpressCart Rider App - Deliver orders quickly and efficiently with real-time GPS tracking, route optimization, and instant order notifications.",
+    "version": "4.2.8",
+    "slug": "food-delivery-rider-singlevendor",
+    "owner": "partharsid",
+    "currentFullName": "@partharsid/food-delivery-rider-singlevendor",
+    "originalFullName": "@partharsid/food-delivery-rider-singlevendor",
+    "privacy": "public",
+    "androidStatusBar": {
+      "backgroundColor": "#000"
+    },
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "notification": {
+      "iosDisplayInForeground": true,
+      "color": "#E63946",
+      "icon": "./assets/not-icon.png",
+      "androidMode": "default",
+      "androidCollapsedTitle": "XpressCart Rider"
+    },
+    "ios": {
+      "bitcode": false,
+      "supportsTablet": true,
+      "bundleIdentifier": "com.xpresscart.rider",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "config": {
+        "googleMapsApiKey": "AIzaSyCzNP5qQql2a5y8lOoO-1yj1lj_tzjVImA"
+      },
+      "infoPlist": {
+        "NSCameraUsageDescription": "To scan credit cards using Stripe sdk.",
+        "NSLocationWhenInUseUsageDescription": "Allow $(PRODUCT_NAME) to use location to determine the delivery address for your orders.",
+        "NSLocationAlwaysUsageDescription": "For a better experience, while using our Service, we may require you to provide us Location Permissions",
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      }
+    },
+    "android": {
+      "versionCode": 16,
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCzNP5qQql2a5y8lOoO-1yj1lj_tzjVImA"
+        }
+      },
+      "package": "com.xpresscart.rider"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "40ac9bde-f641-4346-9520-dbc23826f7ce"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
+  }
+}

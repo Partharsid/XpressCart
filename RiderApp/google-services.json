@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "765533190793",
+    "project_id": "xpresscart-app",
+    "storage_bucket": "xpresscart-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765533190793:android:523c405a1afa34a1d2a458",
+        "android_client_info": {
+          "package_name": "com.xpresscart.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765533190793-kkmsjv7kmclpo6v1ctrpcov1s86ji4uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbP0jR93k6UmUxg0_NiZiSoYmQG02MDLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765533190793-kkmsjv7kmclpo6v1ctrpcov1s86ji4uk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "765533190793-ls8gb8ak1sdo5iicvmgtsr6fvsuudqil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.xpresscart.rider"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765533190793:android:b7f637f221f2520dd2a458",
+        "android_client_info": {
+          "package_name": "com.xpresscart.rider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765533190793-kkmsjv7kmclpo6v1ctrpcov1s86ji4uk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbP0jR93k6UmUxg0_NiZiSoYmQG02MDLA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765533190793-kkmsjv7kmclpo6v1ctrpcov1s86ji4uk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "765533190793-ls8gb8ak1sdo5iicvmgtsr6fvsuudqil.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.xpresscart.rider"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

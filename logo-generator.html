@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XpressCart Logo Generator</title>
+<style>
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; }
+h2 { color: #1D3557; }
+.container { max-width: 900px; margin: 0 auto; }
+.card { background: white; border-radius: 12px; padding: 30px; margin: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.logo-preview { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; }
+.instructions { background: #fff3cd; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #ffc107; }
+button { background: #E63946; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; margin: 5px; }
+button:hover { background: #C1121F; }
+button.secondary { background: #1D3557; }
+button.secondary:hover { background: #15263F; }
+canvas { border: 1px solid #eee; border-radius: 8px; margin: 5px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 style="color:#E63946;text-align:center;">XpressCart Brand Assets Generator</h1>
+
+  <div class="card">
+    <h2>App Icon (1024 x 1024)</h2>
+    <div class="logo-preview">
+      <canvas id="appIcon" width="1024" height="1024"></canvas>
+      <div>
+        <button onclick="downloadCanvas('appIcon', 'icon.png')">Download icon.png</button>
+        <p style="color:#666;font-size:13px;">Place in CustomerApp/assets/ and RiderApp/assets/</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Notification Icon (96 x 96)</h2>
+    <div class="logo-preview">
+      <canvas id="notifIcon" width="96" height="96"></canvas>
+      <div>
+        <button onclick="downloadCanvas('notifIcon', 'not-icon.png')">Download not-icon.png</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Adaptive Icon (1024 x 1024)</h2>
+    <div class="logo-preview">
+      <canvas id="adaptiveIcon" width="1024" height="1024"></canvas>
+      <div>
+        <button onclick="downloadCanvas('adaptiveIcon', 'adaptive-icon.png')">Download adaptive-icon.png</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Splash Screen (1284 x 2778 - iPhone default)</h2>
+    <div class="logo-preview">
+      <canvas id="splash" width="1284" height="2778" style="max-width:200px; max-height:432px;"></canvas>
+      <div>
+        <button onclick="downloadCanvas('splash', 'splash.png')">Download splash.png</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <strong>Instructions:</strong>
+    <ol>
+      <li>Click each <strong>Download</strong> button to save the PNG files</li>
+      <li><strong>CustomerApp:</strong> Replace files in <code>CustomerApp/assets/</code> (icon.png, splash.png, not-icon.png, adaptive-icon.png)</li>
+      <li><strong>RiderApp:</strong> Replace files in <code>RiderApp/assets/</code> (icon.png, splash.png, not-icon.png)</li>
+      <li>For <strong>Favicon</strong> (Admin Dashboard): Place icon.png in <code>Admin Dashboard/public/</code> as favicon.png</li>
+      <li>For Apple touch icon: Place in <code>Admin Dashboard/public/</code> as apple-icon.png</li>
+    </ol>
+  </div>
+</div>
+
+<script>
+// XpressCart Colors
+const PRIMARY = '#E63946';
+const PRIMARY_DARK = '#C1121F';
+const SECONDARY = '#1D3557';
+const WHITE = '#FFFFFF';
+const LIGHT_BG = '#FFF5F5';
+
+function drawAppIcon(canvas) {
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+
+  // Background gradient
+  const grad = ctx.createLinearGradient(0, 0, w, h);
+  grad.addColorStop(0, PRIMARY);
+  grad.addColorStop(1, PRIMARY_DARK);
+  ctx.fillStyle = grad;
+  ctx.beginPath();
+  ctx.roundRect(w*0.05, h*0.05, w*0.9, h*0.9, w*0.18);
+  ctx.fill();
+
+  // Shopping cart icon
+  const cx = w * 0.5, cy = h * 0.42;
+  ctx.fillStyle = WHITE;
+
+  // Cart body
+  ctx.beginPath();
+  ctx.roundRect(cx - w*0.28, cy - h*0.05, w*0.56, h*0.22, w*0.04);
+  ctx.fill();
+
+  // Cart wheels
+  ctx.beginPath();
+  ctx.arc(cx - w*0.15, cy + h*0.22, w*0.07, 0, Math.PI*2);
+  ctx.arc(cx + w*0.15, cy + h*0.22, w*0.07, 0, Math.PI*2);
+  ctx.fill();
+
+  // Cart handle
+  ctx.strokeStyle = WHITE;
+  ctx.lineWidth = w*0.04;
+  ctx.lineCap = 'round';
+  ctx.beginPath();
+  ctx.moveTo(cx - w*0.12, cy - h*0.05);
+  ctx.lineTo(cx - w*0.12, cy - h*0.25);
+  ctx.lineTo(cx + w*0.25, cy - h*0.25);
+  ctx.stroke();
+
+  // Speed lines
+  ctx.lineWidth = w*0.025;
+  ctx.beginPath();
+  ctx.moveTo(cx + w*0.32, cy - h*0.05);
+  ctx.lineTo(cx + w*0.40, cy - h*0.05);
+  ctx.moveTo(cx + w*0.30, cy + h*0.05);
+  ctx.lineTo(cx + w*0.42, cy + h*0.05);
+  ctx.stroke();
+
+  // Brand text
+  ctx.fillStyle = WHITE;
+  ctx.font = `bold ${w*0.13}px "Segoe UI", Arial, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.fillText('XpressCart', cx, cy + h*0.42);
+}
+
+function drawNotifIcon(canvas) {
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+
+  ctx.fillStyle = PRIMARY;
+  ctx.beginPath();
+  ctx.arc(w/2, h/2, w*0.45, 0, Math.PI*2);
+  ctx.fill();
+
+  ctx.fillStyle = WHITE;
+  ctx.font = `bold ${w*0.38}px "Segoe UI", Arial, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('X', w/2, h/2);
+}
+
+function drawAdaptiveIcon(canvas) {
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+
+  // Android adaptive - foreground with safe zone
+  ctx.fillStyle = PRIMARY_DARK;
+  ctx.beginPath();
+  ctx.roundRect(w*0.08, h*0.08, w*0.84, h*0.84, w*0.16);
+  ctx.fill();
+
+  // Cart icon centered in safe zone
+  const cx = w * 0.5, cy = h * 0.42;
+  ctx.fillStyle = WHITE;
+
+  ctx.beginPath();
+  ctx.roundRect(cx - w*0.25, cy - h*0.04, w*0.50, h*0.20, w*0.04);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(cx - w*0.13, cy + h*0.20, w*0.06, 0, Math.PI*2);
+  ctx.arc(cx + w*0.13, cy + h*0.20, w*0.06, 0, Math.PI*2);
+  ctx.fill();
+
+  ctx.strokeStyle = WHITE;
+  ctx.lineWidth = w*0.035;
+  ctx.lineCap = 'round';
+  ctx.beginPath();
+  ctx.moveTo(cx - w*0.10, cy - h*0.04);
+  ctx.lineTo(cx - w*0.10, cy - h*0.22);
+  ctx.lineTo(cx + w*0.22, cy - h*0.22);
+  ctx.stroke();
+
+  ctx.fillStyle = WHITE;
+  ctx.font = `bold ${w*0.11}px "Segoe UI", Arial, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.fillText('XpressCart', cx, cy + h*0.40);
+}
+
+function drawSplash(canvas) {
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+
+  // Background
+  ctx.fillStyle = PRIMARY;
+  ctx.fillRect(0, 0, w, h);
+
+  const cx = w * 0.5, cy = h * 0.35;
+
+  // Cart icon
+  ctx.fillStyle = WHITE;
+  ctx.beginPath();
+  ctx.roundRect(cx - w*0.18, cy - h*0.02, w*0.36, h*0.14, w*0.03);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(cx - w*0.10, cy + h*0.14, w*0.045, 0, Math.PI*2);
+  ctx.arc(cx + w*0.10, cy + h*0.14, w*0.045, 0, Math.PI*2);
+  ctx.fill();
+
+  ctx.strokeStyle = WHITE;
+  ctx.lineWidth = w*0.025;
+  ctx.lineCap = 'round';
+  ctx.beginPath();
+  ctx.moveTo(cx - w*0.08, cy - h*0.02);
+  ctx.lineTo(cx - w*0.08, cy - h*0.15);
+  ctx.lineTo(cx + w*0.16, cy - h*0.15);
+  ctx.stroke();
+
+  // Brand name
+  ctx.fillStyle = WHITE;
+  ctx.font = `bold ${w*0.12}px "Segoe UI", Arial, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.fillText('XpressCart', cx, cy + h*0.28);
+
+  // Tagline
+  ctx.font = `${w*0.04}px "Segoe UI", Arial, sans-serif`;
+  ctx.fillStyle = 'rgba(255,255,255,0.85)';
+  ctx.fillText('Fast & Fresh Delivery', cx, cy + h*0.34);
+
+  // Loading indicator
+  ctx.fillText('Powered by XpressCart', cx, h*0.92);
+  ctx.font = `${w*0.035}px "Segoe UI", Arial, sans-serif`;
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
+
+  // Version text
+  ctx.fillText('v1.0.0', cx, h*0.96);
+}
+
+function downloadCanvas(canvasId, filename) {
+  const canvas = document.getElementById(canvasId);
+  const link = document.createElement('a');
+  link.download = filename;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+
+// Draw all on load
+window.onload = function() {
+  drawAppIcon(document.getElementById('appIcon'));
+  drawNotifIcon(document.getElementById('notifIcon'));
+  drawAdaptiveIcon(document.getElementById('adaptiveIcon'));
+  drawSplash(document.getElementById('splash'));
+};
+</script>
+</body>
+</html>
