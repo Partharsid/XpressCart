@@ -41,6 +41,7 @@
     "apollo-upload-client": "^10.0.1",
     "deprecated-react-native-prop-types": "^4.0.0",
     "expo": "^47.0.0",
+    "expo-build-properties": "^56.0.14",
     "expo-constants": "~14.0.2",
     "expo-font": "~11.0.1",
     "expo-location": "~15.0.1",

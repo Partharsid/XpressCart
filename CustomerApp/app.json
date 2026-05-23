@@ -69,6 +69,16 @@
     },
     "plugins": [
       [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 33,
+            "targetSdkVersion": 33,
+            "buildToolsVersion": "33.0.0"
+          }
+        }
+      ],
+      [
         "expo-tracking-transparency",
         {
           "userTrackingPermission": "Allow this app to collect app-related data that can be used for tracking you or your device."

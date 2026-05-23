@@ -67,6 +67,18 @@
       },
       "package": "com.xpresscart.rider"
     },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 33,
+            "targetSdkVersion": 33,
+            "buildToolsVersion": "33.0.0"
+          }
+        }
+      ]
+    ],
     "extra": {
       "eas": {
         "projectId": "40ac9bde-f641-4346-9520-dbc23826f7ce"
