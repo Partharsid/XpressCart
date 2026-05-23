@@ -38,9 +38,9 @@ const ENV = {
     STRIPE_STORE_NAME: "XpressCart",
   },
   production: {
-    GRAPHQL_URL: "http://localhost:4000/graphql",
-    WS_GRAPHQL_URL: "ws://localhost:4000/graphql",
-    SERVER_URL: "http://localhost:4000/", // put / at the end of server url
+    GRAPHQL_URL: "https://xpresscart-api.vercel.app/graphql",
+    WS_GRAPHQL_URL: "wss://xpresscart-api.vercel.app/graphql",
+    SERVER_URL: "https://xpresscart-api.vercel.app/", // put / at the end of server url
     IOS_CLIENT_ID_GOOGLE:
       "94983896797-irt6u2cmq2sjcp7j1rj9m9pqptjd12ue.apps.googleusercontent.com",
     ANDROID_CLIENT_ID_GOOGLE:

@@ -16,8 +16,8 @@ const ENV = {
     WS_GRAPHQL_URL: "ws://localhost:4000/graphql",
   },
   production: {
-    GRAPHQL_URL: "http://localhost:4000/graphql",
-    WS_GRAPHQL_URL: "ws://localhost:4000/graphql",
+    GRAPHQL_URL: "https://xpresscart-api.vercel.app/graphql",
+    WS_GRAPHQL_URL: "wss://xpresscart-api.vercel.app/graphql",
   },
 };
 
