@@ -132,12 +132,7 @@ const Category = props => {
         <Row className="mt-5">
           <div className="col">
             <Card className="shadow">
-              {isOpen && (
-                <Alert
-                  message="Delete feature will available after purchasing product"
-                  severity="warning"
-                />
-              )}
+
               <Query query={GET_CATEGORIES} variables={{ page: 0 }}>
                 {({ loading, error, data }) => {
                   if (error) {

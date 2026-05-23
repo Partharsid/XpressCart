@@ -156,12 +156,7 @@ const Coupon = props => {
         <Row className="mt-5">
           <div className="col">
             <Card className="shadow">
-              {isOpen && (
-                <Alert
-                  message="Delete feature will available after purchasing product"
-                  severity="warning"
-                />
-              )}
+
               <Query query={GET_COUPONS}>
                 {({ loading, error, data }) => {
                   if (error) {
