@@ -83,8 +83,7 @@ const setupApollo = async () => {
   });
 
   // set ref for global use
-  // eslint-disable-next-line no-undef
-  clientRef = client;
+  global.clientRef = client;
 
   return client;
 };

@@ -101,8 +101,7 @@ export default function App() {
       // Android location permissions are granted during the app
       // install, so this will only ask on iOS
       const { status } = await Location.requestForegroundPermissionsAsync()
-      // eslint-disable-next-line no-undef
-      finalStatus = status
+      const finalStatus = status
     }
   }
 
