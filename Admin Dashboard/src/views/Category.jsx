@@ -111,11 +111,7 @@ const Category = props => {
                 color="danger"
                 onClick={e => {
                   e.preventDefault()
-                  // deleteCategory({ variables: { id: row._id } })
-                  setIsOpen(true)
-                  setTimeout(() => {
-                    setIsOpen(false)
-                  }, 2000)
+                  deleteCategory({ variables: { id: row._id } })
                 }}>
                 {'Delete'}
               </Badge>

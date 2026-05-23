@@ -102,11 +102,7 @@ const Option = props => {
                 color="danger"
                 onClick={e => {
                   e.preventDefault()
-                  // deleteOption({ variables: { id: row._id } })
-                  setIsOpen(true)
-                  setTimeout(() => {
-                    setIsOpen(false)
-                  }, 2000)
+                  deleteOption({ variables: { id: row._id } })
                 }}>
                 {'Delete'}
               </Badge>

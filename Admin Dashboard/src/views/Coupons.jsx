@@ -134,11 +134,7 @@ const Coupon = props => {
                 color="danger"
                 onClick={e => {
                   e.preventDefault()
-                  // deleteCoupon({ variables: { id: row._id } })
-                  setIsOpen(true)
-                  setTimeout(() => {
-                    setIsOpen(false)
-                  }, 2000)
+                  deleteCoupon({ variables: { id: row._id } })
                 }}>
                 {'Delete'}
               </Badge>

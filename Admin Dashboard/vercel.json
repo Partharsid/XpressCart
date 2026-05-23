@@ -1,5 +1,1 @@
-{
-  "buildCommand": "echo 'Static build already done'",
-  "outputDirectory": "build",
-  "installCommand": "echo 'Skipping install'"
-}
+{"buildCommand":"echo skip","outputDirectory":"build","installCommand":"echo skip"}

@@ -105,11 +105,7 @@ const Addon = props => {
                   color="danger"
                   onClick={e => {
                     e.preventDefault()
-                    // deleteAddon({ variables: { id: row._id } })
-                    setIsOpen(true)
-                    setTimeout(() => {
-                      setIsOpen(false)
-                    }, 2000)
+                    deleteAddon({ variables: { id: row._id } })
                   }}>
                   {'Delete'}
                 </Badge>

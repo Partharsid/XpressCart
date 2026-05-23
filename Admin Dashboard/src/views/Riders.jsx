@@ -153,11 +153,7 @@ function Riders(props) {
                 color="danger"
                 onClick={e => {
                   e.preventDefault()
-                  // deleteRider({ variables: { id: row._id } })
-                  setIsOpen(true)
-                  setTimeout(() => {
-                    setIsOpen(false)
-                  }, 2000)
+                  deleteRider({ variables: { id: row._id } })
                 }}>
                 {'Delete'}
               </Badge>
@@ -178,12 +174,8 @@ function Riders(props) {
         <Row className="mt-5">
           <div className="col">
             <Card className="shadow">
-              {isOpen && (
-                <Alert
-                  message="Delete feature will available after purchasing product"
-                  severity="warning"
-                />
-              )}
+
+
               <Query
                 query={GET_RIDERS}
                 onError={error => {

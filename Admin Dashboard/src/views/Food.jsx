@@ -130,11 +130,7 @@ const Food = props => {
                 color="danger"
                 onClick={e => {
                   e.preventDefault()
-                  // deleteFood({ variables: { id: row._id } })
-                  setIsOpen(true)
-                  setTimeout(() => {
-                    setIsOpen(false)
-                  }, 2000)
+                  deleteFood({ variables: { id: row._id } })
                 }}>
                 {'Delete'}
               </Badge>
