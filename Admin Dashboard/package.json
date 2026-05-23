@@ -2,6 +2,9 @@
   "name": "xpresscart-dashboard",
   "version": "3.0.0",
   "description": "XpressCart dashboard",
+  "engines": {
+    "node": "20.x"
+  },
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
